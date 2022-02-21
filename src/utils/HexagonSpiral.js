@@ -37,7 +37,7 @@ HexagonSpiral.prototype.pointy = function() {
   return this.orientation( Math.sqrt(3.0), Math.sqrt(3.0) / 2.0, 0.0, 3.0 / 2.0, Math.sqrt(3.0) / 3.0, -1.0 / 3.0, 0.0, 2.0 / 3.0, 0.5 );
 }
 HexagonSpiral.prototype.flat = function() {
-  return orientation( 3.0 / 2.0, 0.0, Math.sqrt(3.0) / 2.0, Math.sqrt(3.0), 2.0 / 3.0, 0.0, -1.0 / 3.0, Math.sqrt(3.0) / 3.0, 0.0 );
+  return this.orientation( 3.0 / 2.0, 0.0, Math.sqrt(3.0) / 2.0, Math.sqrt(3.0), 2.0 / 3.0, 0.0, -1.0 / 3.0, Math.sqrt(3.0) / 3.0, 0.0 );
 }
 
 HexagonSpiral.prototype.getRadius = function( count ) {
