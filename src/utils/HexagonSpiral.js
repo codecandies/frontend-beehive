@@ -80,6 +80,7 @@ HexagonSpiral.prototype.calculateHexagonRings = function() {
   hexagons.push({
     id: this.hexId(this.centerHex),
     points: this.getSVGPoints( this.centerHex ),
+    center: this.centerOfHex( this.centerHex )
   });
   for ( let i = 1; i <= this.radius; i++ ) {
     const ring = this.hexRing(i);
@@ -87,6 +88,7 @@ HexagonSpiral.prototype.calculateHexagonRings = function() {
       hexagons.push({
         id: this.hexId(hex),
         points: this.getSVGPoints( hex ),
+        center: this.centerOfHex( hex )
       });
     }
   }
