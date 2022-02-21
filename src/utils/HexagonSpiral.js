@@ -77,12 +77,16 @@ HexagonSpiral.prototype.hexRing = function(radius) {
 
 HexagonSpiral.prototype.calculateHexagonRings = function() {
   const hexagons = [];
+  hexagons.push({
+    id: this.hexId(this.centerHex),
+    points: this.getSVGPoints( this.centerHex ),
+  });
   for ( let i = 1; i <= this.radius; i++ ) {
     const ring = this.hexRing(i);
     for ( let hex of ring ) {
       hexagons.push({
         id: this.hexId(hex),
-        points: this.getSVGPoints( hex )
+        points: this.getSVGPoints( hex ),
       });
     }
   }
@@ -121,15 +125,8 @@ HexagonSpiral.prototype.cornersOfHex = function( hex ) {
 }
 
 HexagonSpiral.prototype.init = function() {
-  // paint center hexagon
-  let hexagons = [];
-  hexagons.push({
-    id: this.hexId(this.centerHex),
-    points: this.getSVGPoints( this.centerHex )
-  });
-  if ( this.radius > 0 ) {
-    hexagons = hexagons.concat( this.calculateHexagonRings() );
-  }
+  const hexagons = this.calculateHexagonRings();
+  console.log( hexagons );
   return hexagons;
 }
 
