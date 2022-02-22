@@ -3,14 +3,14 @@
 </script>
 
 <div class="container">
-  <svg viewBox="0 0 600 600" id="svg1">
+  <svg viewBox="0 0 1000 1000" id="svg1">
     <Hexagons />
   </svg>
 </div>
 
 <style>
   svg {
-    width: 600px;
+    width: 1000px;
     flex: 1;
   }
   .container {
